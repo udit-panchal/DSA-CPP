@@ -4,7 +4,7 @@ using namespace std;
 /*
     -x-x-x-    Basics of 2D-Array or Matrix    -x-x-x-
                ============================
-
+            
 
     A multidimensional array is basically an array of arrays.
 
@@ -18,7 +18,7 @@ using namespace std;
 
     (II) for accessing array input output
         - To access an element of a two-dimensional array, you must specify the index number of both the row and column.
-
+ 
         arrayName[row][col]
 
         cin>> arrayName[row][col]
@@ -31,7 +31,7 @@ using namespace std;
      -------------
      | 0 | 1 | 2 |   ←- R0
      -------------
-     | 3 | 4 | 5 |   ←- R1
+     | 3 | 4 | 5 |   ←- R1          
     -------------
      | 6 | 7 | 8 |   ←- R2
      -------------
