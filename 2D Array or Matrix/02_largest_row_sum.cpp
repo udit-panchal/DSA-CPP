@@ -17,7 +17,7 @@ void rowWiseSum(int arr[][3], int row, int col)
         if (sum > maxi)
         {
             maxi = sum;
-            rowIndex = row;
+            rowIndex = i;
         }
     }
     cout << "max sum : " << maxi<<endl;
@@ -28,7 +28,8 @@ int main()
 {
     const int row = 3;
     const int col = 3;
-    int arr[row][col] = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}};
+    // int arr[row][col] = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}}; 21 : 3
+    int arr[row][col] = {{3,40,11}, {2,12,1}, {7,8,7}};
 
     // int arr[row][col] = {{1, 2, 3}, {1, 3, 3}, {1, 5, 3}}; // 9 : 3
 
