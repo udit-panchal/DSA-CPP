@@ -3,6 +3,7 @@ using namespace std;
 
 bool binarySearchInMatrix(vector<vector<int>> matrix, int target, int &a, int &b)
 {
+    // find row and col
     int row = matrix.size();
     int col = matrix[0].size();
 
@@ -13,13 +14,13 @@ bool binarySearchInMatrix(vector<vector<int>> matrix, int target, int &a, int &b
 
     while (start < end)
     {
+
         int element = matrix[mid / col][mid % col];
         if (element == target)
         {
-            a = mid/col;
-            b = mid%col;
+            a = mid / col;
+            b = mid % col;
             return 1;
-
         }
 
         if (element < target)
@@ -27,7 +28,7 @@ bool binarySearchInMatrix(vector<vector<int>> matrix, int target, int &a, int &b
         else
             end = mid - 1;
 
-     mid = start + (end - start) / 2;
+        mid = start + (end - start) / 2;
     }
 
     return 0;
@@ -41,7 +42,10 @@ int main()
     matrix.push_back({10, 11, 16, 20});
     matrix.push_back({23, 30, 34, 60});
 
-    int target = 16;
+    int target = 98;
+    // int target = 1;
+    // int target = 16;
+    // int target = 60;
 
     int a = -1;
     int b = -1;
@@ -49,9 +53,9 @@ int main()
     bool result = binarySearchInMatrix(matrix, target, a, b);
 
     if (result == 1)
-    {
         cout << "Element Found on : index[" << a << "][" << b << "]";
-    }
+    else
+        cout << "Not Found" << endl;
 
     return 0;
 }
