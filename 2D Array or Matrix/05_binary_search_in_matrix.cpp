@@ -10,6 +10,7 @@ bool binarySearchInMatrix(vector<vector<int>> matrix, int target, int &a, int &b
     int start = 0;
     int end = row * col - 1;
 
+    //finding mid of the matrix
     int mid = start + (end - start) / 2;
 
     while (start < end)
@@ -18,13 +19,15 @@ bool binarySearchInMatrix(vector<vector<int>> matrix, int target, int &a, int &b
         int element = matrix[mid / col][mid % col];
         if (element == target)
         {
+            //store index
             a = mid / col;
             b = mid % col;
             return 1;
         }
-
+        //search from mid+1 to end
         if (element < target)
             start = mid + 1;
+        //search from starting to mid-1
         else
             end = mid - 1;
 
