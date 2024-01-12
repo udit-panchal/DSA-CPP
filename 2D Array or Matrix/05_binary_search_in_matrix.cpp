@@ -62,3 +62,35 @@ int main()
 
     return 0;
 }
+
+/*
+
+    
+
+
+    question : search in 2d matrix
+    link : https://leetcode.com/problems/search-a-2d-matrix/
+
+    ----------------------------------------------------------------------------------------------
+    Statement :
+
+        You are given an m x n integer matrix matrix with the following two properties:
+
+            - Each row is sorted in non-decreasing order.
+            - The first integer of each row is greater than the last integer of the previous row.
+            
+        Given an integer target, return true if target is in matrix or false otherwise.
+
+        You must write a solution in O(log(m * n)) time complexity.
+    ----------------------------------------------------------------------------------------------
+
+    Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
+    Output: [1,2,3,6,9,8,7,4,5]
+
+    ---------------------
+
+    Input: matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+    Output: [1,2,3,4,8,12,11,10,9,5,6,7]
+
+    ----------------------------------------------------------------------------------------------
+*/
