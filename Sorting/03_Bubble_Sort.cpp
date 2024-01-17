@@ -1,18 +1,33 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void insertionSort(int arr[], int n)
+// void bubbleSort(int arr[], int n)
+// {
+//     for (int i = 0; i < n - 1; i++)
+//     {
+//         for (int j = 0; j < n - i - 1; j++)
+//         {
+//             if (arr[j] > arr[j + 1])
+//             {
+//                 swap(arr[j], arr[j + 1]);
+//             }
+//         }
+//     }
+// }
+
+void recursive_BubbleSort(int arr[], int n)
 {
+    // BASE CASE : alreay sortei
+    if (n == 0 || n == 1)
+        return;
+
+    // solve 1 Case - place largest element on right place
     for (int i = 0; i < n - 1; i++)
-    {
-        for (int j = 0; j < n - i - 1; j++)
-        {
-            if (arr[j] > arr[j + 1])
-            {
-                swap(arr[j], arr[j + 1]);
-            }
-        }
-    }
+        if (arr[i] > arr[i + 1])
+            swap(arr[i], arr[i + 1]);
+
+    //RECURSIVE CASE : 
+    return recursive_BubbleSort(arr, n - 1);
 }
 
 int main()
@@ -20,7 +35,9 @@ int main()
     int arr[] = {64, 25, 12, 22, 11};
     int size = 5;
 
-    insertionSort(arr, size);
+    // bubbleSort(arr, size);
+
+    recursive_BubbleSort(arr, size);
 
     for (int i = 0; i < size; i++)
         cout << arr[i] << " ";
