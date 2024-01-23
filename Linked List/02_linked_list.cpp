@@ -12,6 +12,19 @@ public:
         this->data = data;
         this->next = NULL;
     }
+
+    ~Node()
+    {
+        int value = this->data;
+
+        // Memory deallocation
+        if (this->next != NULL)
+        {
+            delete next;
+            this->next = NULL;
+        }
+        cout << "Memory free with data : " << value << endl;
+    }
 };
 
 class LinkedList
@@ -44,7 +57,8 @@ public:
         if (head == NULL)
             head = tail = newNode;
 
-        else{
+        else
+        {
             tail->next = newNode;
             tail = newNode;
         }
@@ -85,35 +99,36 @@ public:
             temp = temp->next;
             count++;
         }
-        if(temp != NULL)
+        if (temp != NULL)
             temp->data = newData;
         else
-            cout<<"Not Found. "<<endl;
+            cout << "Not Found. " << endl;
     }
 
     void deleteNode(int position)
     {
-        if(position == 1)
+        if (position == 1)
         {
-            Node* temp = head;
-            head = head -> next;
+            Node *temp = head;
+            head = head->next;
             temp->next = NULL;
             delete temp;
         }
-        else{
-            Node* curr = head;
-            Node* prev = NULL;
+        else
+        {
+            Node *curr = head;
+            Node *prev = NULL;
             int count = 1;
 
-
-            while(count != position)
+            while (count != position)
             {
                 prev = curr;
                 curr = curr->next;
                 count++;
             }
 
-            if(curr == tail) tail = prev;
+            if (curr == tail)
+                tail = prev;
 
             prev->next = curr->next;
             curr->next = NULL;
@@ -155,6 +170,10 @@ int main()
     list.insertAtPosition(123, 2);
 
     list.replaceValue(456, 123);
+
+    list.print();
+
+    list.deleteNode(2);
 
     list.print();
 
