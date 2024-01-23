@@ -23,6 +23,7 @@ public:
     LinkedList()
     {
         this->head = NULL;
+        this->tail = NULL;
     }
 
     void insertAtBegin(int data)
