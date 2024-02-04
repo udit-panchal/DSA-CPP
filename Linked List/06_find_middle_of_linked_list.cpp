@@ -31,24 +31,17 @@ class LinkedList
 {
 public:
     Node *head;
-    Node *tail;
 
     LinkedList()
     {
         this->head = NULL;
-        this->tail = NULL;
     }
 
     void insert(int data)
     {
         Node *newNode = new Node(data);
         newNode->next = head;
-
-        if (head == NULL)
-            head = tail = newNode;
-
-        else
-            head = newNode;
+        head = newNode;
     }
 
     void deleteNode(int position)
@@ -73,9 +66,6 @@ public:
                 count++;
             }
 
-            if (curr == tail)
-                tail = prev;
-
             prev->next = curr->next;
             curr->next = NULL;
             delete curr;
@@ -94,7 +84,6 @@ public:
         cout << endl;
 
         cout << "Head :" << head->data << endl;
-        cout << "Tail :" << tail->data << endl;
     }
 
 
@@ -145,8 +134,6 @@ public:
 
         return slow;
     }
-
-
 
 };
 
