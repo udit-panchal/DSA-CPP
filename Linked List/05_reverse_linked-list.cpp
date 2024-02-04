@@ -31,24 +31,17 @@ class LinkedList
 {
 public:
     Node *head;
-    Node *tail;
 
     LinkedList()
     {
         this->head = NULL;
-        this->tail = NULL;
     }
 
     void insert(int data)
     {
         Node *newNode = new Node(data);
         newNode->next = head;
-
-        if (head == NULL)
-            head = tail = newNode;
-
-        else
-            head = newNode;
+        head = newNode;
     }
 
     void deleteNode(int position)
@@ -73,9 +66,6 @@ public:
                 count++;
             }
 
-            if (curr == tail)
-                tail = prev;
-
             prev->next = curr->next;
             curr->next = NULL;
             delete curr;
@@ -94,8 +84,10 @@ public:
         cout << endl;
 
         cout << "Head :" << head->data << endl;
-        cout << "Tail :" << tail->data << endl;
     }
+
+
+    // APPROACH - 1 : iterative way
 
     void iterative_Reverse()
     {
@@ -108,8 +100,6 @@ public:
         Node *curr = head;
         Node *forward = NULL;
 
-        tail = head;
-
         while (curr != NULL)
         {
             forward = curr->next;
@@ -120,7 +110,10 @@ public:
         head = prev;
     }
 
-    Node* reverse(Node* curr, Node* prev)
+
+    // APPROACH - 2 : revursive
+
+    Node* reverse1(Node* curr, Node* prev)
     {
         if(curr == NULL)
         {
@@ -128,38 +121,45 @@ public:
             return prev;
         }
 
-        Node* nextNode = curr->next;
+        Node* forward = curr->next;
         curr->next = prev;
 
-        return reverse(nextNode, curr);
+        return reverse1(forward, curr);
     }
 
     void recursive_Reverse()
     {
-        head = reverse(head,NULL);
+        head = reverse1(head,NULL);
     }
 
+    // APPROACH 3 : 
+
+    Node* reverse_Recursive(Node* head, Node* curr, Node* prev)
+    {
+        if (head == NULL || head->next == NULL)
+            return head;
+
+        Node* remainingNode = reverse_Recursive(head->next, curr, prev);
+
+        head ->next ->next = head;
+        head->next = NULL;
+
+        return remainingNode;
+    }
 };
 
 int main()
 {
 
     LinkedList list;
-
     list.insert(1);
     list.insert(2);
     list.insert(3);
     list.insert(4);
-
     list.print();
 
-    // list.deleteNode(2);
-
-    // list.print();
-
     // list.iterative_Reverse();
-    list.recursive_Reverse();
-
+    // list.recursive_Reverse();
     
     list.print();
 
