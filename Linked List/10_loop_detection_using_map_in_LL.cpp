@@ -86,7 +86,6 @@ public:
             Node *curr = head;
             Node *prev = NULL;
             int count = 1;
-
             while (count != position)
             {
                 prev = curr;
