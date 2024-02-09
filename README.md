@@ -1,6 +1,6 @@
-# data-structures-and-algorithms
+# Data Structure And Algoritham
 
-<h1>Problems and Solution of data structures and algorithms</h1>
+<h1>Problems/Solution and notes on topics of data structures and algorithms</h1>
 
 <h2><b>Topics </b></h2>
 
