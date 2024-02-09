@@ -48,11 +48,11 @@ void print(stack<int> str)
 
 int main()
 {
-    // string expression = "{{[()]}}";          //balanced
+    string expression = "{{[()]}}";             //balanced
     // string expression = "{[()()]()}";        //balanced
     // string expression = "{[(){}()]}";        //balanced
     // string expression = "{[()]}";            //balanced
-    string expression = "{[()]}}}";          //unbalanced
+    // string expression = "{[()]}}}";          //unbalanced
 
     if (solve(expression))
     {
