@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void solve(stack<int> &inputStack, int element)
+void insertBottom(stack<int> &inputStack, int element)
 {
     if (!inputStack.empty())
     {
@@ -12,14 +12,9 @@ void solve(stack<int> &inputStack, int element)
     int temp = inputStack.top();
     inputStack.pop();
 
-    solve(inputStack, element);
+    insertBottom(inputStack, element);
 
     inputStack.push(temp);
-}
-
-void insertBottom(stack<int> &inputStack, int element)
-{
-    solve(inputStack, element);
 }
 
 void print(stack<int> str)
