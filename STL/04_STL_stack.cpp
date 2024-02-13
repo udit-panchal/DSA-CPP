@@ -20,7 +20,7 @@ int main()
     s.pop();
 
     // Printing the top element of the stack after popping
-    cout << "Top element after pop: " << s.top() << endl;
+    cout << "Top element after pop: " << s.top() << endl; 
 
     // Printing the size of the stack
     cout << "Size of stack: " << s.size() << endl;
