@@ -18,12 +18,12 @@ vector<int> first_negative_in_k_size_window(vector<int> arr, int k)
     // Add the first negative element in the initial window to the result vector
     if (windowIndex.size() > 0)
     {
-        result.push_back(arr[windowIndex.front()])
+        result.push_back(arr[windowIndex.front()]);
     }
     else
     {
-        result.push_back(0)
-    };
+        result.push_back(0); // If there are no negatives in the initial window, add 0
+    }
 
     // Process the remaining windows
     for (int i = k; i < n; i++)
