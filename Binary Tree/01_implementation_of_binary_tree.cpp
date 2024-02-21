@@ -50,7 +50,7 @@ public:
 
             root = new Node(data);
         }
-        
+
         // when tree is not empty
         else
         {
