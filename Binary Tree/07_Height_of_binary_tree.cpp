@@ -36,14 +36,14 @@ public:
         int right = bt_Height(root->right);
 
         // return the max height of the left and right subtree and plus 1 for curr root.
-        
+
         return max(left, right) + 1;
     }
 };
 
 int main()
 {
-
+  
     BinaryTree bt;
 
     bt.root = new Node(1);
