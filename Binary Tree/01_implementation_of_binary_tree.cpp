@@ -66,7 +66,7 @@ public:
             cout << "Enter data for right insertion of " << data << endl;
             root->right = insertNode(root->right);
         }
-        return root;
+        return root; 
     }
 };
 
