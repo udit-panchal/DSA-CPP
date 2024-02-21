@@ -70,7 +70,7 @@ public:
 int main()
 {
 
-    BinaryTree bt;
+    BinaryTree bt;  
 
     bt.build_with_level_order(bt.root);
 
