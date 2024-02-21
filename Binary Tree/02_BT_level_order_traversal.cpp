@@ -18,7 +18,7 @@ public:
 
 class BinaryTree
 {
-public:
+public: 
     Node *root;
 
     BinaryTree()  
