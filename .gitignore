@@ -3,3 +3,4 @@
 *.cxx
 00_temp.cpp
 000000.cpp
+.vscode
